@@ -1,0 +1,42 @@
+datasource db {
+  provider = "sqlite"
+  url = env("DATABASE_URL")
+}
+generator client {
+  provider = "prisma-client-js"
+}
+model Profile {
+  id Int @id @default(autoincrement())
+  name String
+  description String
+  githubUrl String?
+  linkedinUrl String?
+  skills Skill[]
+  experiences Experience[]
+  projects Project[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+model Skill {
+  id Int @id @default(autoincrement())
+  name String
+  profileId Int
+  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  @@unique([profileId, name])
+}
+model Experience {
+  id Int @id @default(autoincrement())
+  company String
+  position String
+  period String
+  achievements String
+  profileId Int
+  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+}
+model Project {
+  id Int @id @default(autoincrement())
+  name String
+  url String
+  profileId Int
+  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+}

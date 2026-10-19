@@ -1,0 +1,5 @@
+type Profile { id: Int! name: String! description: String! githubUrl: String linkedinUrl: String skills: [Skill!]! experiences: [Experience!]! projects: [Project!]! }
+type Skill { id: Int! name: String! }
+type Experience { id: Int! company: String! position: String! period: String! achievements: String! }
+type Project { id: Int! name: String! url: String! }
+type Query { profile: Profile! }
