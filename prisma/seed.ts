@@ -7,28 +7,15 @@ const skills = [
   'TypeScript',
   'NestJS',
   'PostgreSQL',
-  'PostGIS',
   'Redis',
   'Kafka',
   'RabbitMQ',
   'Docker',
   'Kubernetes',
   'KEDA',
-  'HPA',
   'GraphQL',
   'REST API',
   'WebSocket',
-  'gRPC',
-  'OpenTelemetry',
-  'Prometheus',
-  'Grafana',
-  'Jest',
-  'Testcontainers',
-  'Git',
-  'CI/CD',
-  'Python',
-  'React',
-  'LLM API',
 ];
 
 async function main(): Promise<void> {
@@ -61,8 +48,14 @@ async function main(): Promise<void> {
       },
       projects: {
         create: [
-          { name: 'Платформа онлайн-оценки недвижимости', url: 'https://github.com/yappy05' },
-          { name: 'B2B-платформа корпоративных трансферов', url: 'https://github.com/yappy05' },
+          {
+            name: 'bank-tarnsfer',
+            url: 'https://github.com/Maksa9905/cogna',
+          },
+          {
+            name: 'Cogna',
+            url: 'https://github.com/yappy05/bank-transfer',
+          },
         ],
       },
     },
